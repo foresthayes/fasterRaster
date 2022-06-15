@@ -67,7 +67,7 @@ fasterHorizon <- function(
 
 		for (direction in directions) {
 	
-			degs <- paste0(c(ifelse(direction < 100, '0', ''), ifelse(direction < 10, '0', ''), direction), collapse='')
+			degs <- sprintf("%03d", floor(direction))
 			thisOut <- rgrass7::readRAST(paste0(outGrassName, '_', degs))
 			thisOut <- raster::raster(thisOut)
 			
